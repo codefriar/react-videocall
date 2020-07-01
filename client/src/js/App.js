@@ -32,7 +32,9 @@ class App extends Component {
       })
       .on('request', ({ from: callFrom }) => {
         console.log('a request came in');
-        this.setState({ callModal: 'active', callFrom });
+        const config = { audio: true, video };
+        this.startCall(false, callFrom, config);
+        // this.setState({ callModal: 'active', callFrom });
       })
       .on('call', (data) => {
         if (data.sdp) {
