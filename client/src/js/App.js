@@ -31,6 +31,7 @@ class App extends Component {
         this.setState({ clientId });
       })
       .on('request', ({ from: callFrom }) => {
+        console.log('a request came in');
         this.setState({ callModal: 'active', callFrom });
       })
       .on('call', (data) => {
